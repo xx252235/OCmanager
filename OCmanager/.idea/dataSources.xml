@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="MySQL - manage@localhost" uuid="29ced44e-c519-4d06-a77d-09f90a1646f8">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/manage</jdbc-url>
+      <driver-properties>
+        <property name="useSSL" value="FALSE" />
+        <property name="serverTimezone" value="CST" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<!-- 文件名字是固定的，连接池会找到这个配置文件进行配置 -->
+	<default-config>
+		<!--第一条内容是固定的-->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<!--最后一项改成你的数据库名字即可-->
+		<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/manage?useSSL=false</property>
+		<!--mysql的用户名和密码-->
+		<property name="user">root</property>
+		<property name="password">root</property>
+	</default-config>
+</c3p0-config>

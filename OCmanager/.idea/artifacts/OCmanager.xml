@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OCmanager">
+    <output-path>$PROJECT_DIR$/out/artifacts/OCmanager</output-path>
+    <root id="archive" name="OCmanager.war" />
+  </artifact>
+</component>

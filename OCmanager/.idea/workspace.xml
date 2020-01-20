@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="OCmanager" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e665e3a-d854-4400-a3c1-8cb958ab8a67" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - manage@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - manage@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - manage@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="manage: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - manage@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="manage: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="t_customer: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1W03I6bRZgcZqL9cJE2hm1YJuEd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="OCmanager" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.99" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/OCmanager/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$">
+          <settings>
+            <option name="CONTEXT_PATH" value="/OCmanager" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_OCmanager" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62346" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="false" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - manage@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - manage@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1a2be63d" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL - manage@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@2ee97547" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e665e3a-d854-4400-a3c1-8cb958ab8a67" name="Default Changelist" comment="" />
+      <created>1578272605148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578272605148</updated>
+      <workItem from="1578272631003" duration="252000" />
+      <workItem from="1578272956954" duration="3167000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="364" y="0" width="652" height="737" key="#OCmanager" timestamp="1578274110274">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="364" y="0" width="652" height="737" key="#OCmanager/0.0.1366.737@0.0.1366.737" timestamp="1578274110274" />
+    <state x="275" y="26" key="#Project_Structure" timestamp="1578274545209">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="275" y="26" key="#Project_Structure/0.0.1366.737@0.0.1366.737" timestamp="1578274545209" />
+    <state x="275" y="25" key="#Tomcat_Server" timestamp="1578274344799">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="275" y="25" key="#Tomcat_Server/0.0.1366.737@0.0.1366.737" timestamp="1578274344799" />
+    <state x="137" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578278595070">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="137" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.737@0.0.1366.737" timestamp="1578278595070" />
+    <state x="303" y="45" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1578278945255">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="303" y="45" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.737@0.0.1366.737" timestamp="1578278945255" />
+    <state x="275" y="25" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1578274352233">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="275" y="25" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1366.737@0.0.1366.737" timestamp="1578274352233" />
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1578274371745">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.737@0.0.1366.737" timestamp="1578274371745" />
+    <state width="1322" height="177" key="GridCell.Tab.0.bottom" timestamp="1578278994292">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.0.bottom/0.0.1366.737@0.0.1366.737" timestamp="1578278994292" />
+    <state width="1322" height="177" key="GridCell.Tab.0.center" timestamp="1578278994292">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.0.center/0.0.1366.737@0.0.1366.737" timestamp="1578278994292" />
+    <state width="1322" height="177" key="GridCell.Tab.0.left" timestamp="1578278994292">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.0.left/0.0.1366.737@0.0.1366.737" timestamp="1578278994292" />
+    <state width="1322" height="177" key="GridCell.Tab.0.right" timestamp="1578278994292">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.0.right/0.0.1366.737@0.0.1366.737" timestamp="1578278994292" />
+    <state width="1322" height="177" key="GridCell.Tab.1.bottom" timestamp="1578278994293">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.1.bottom/0.0.1366.737@0.0.1366.737" timestamp="1578278994293" />
+    <state width="1322" height="177" key="GridCell.Tab.1.center" timestamp="1578278994292">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.1.center/0.0.1366.737@0.0.1366.737" timestamp="1578278994292" />
+    <state width="1322" height="177" key="GridCell.Tab.1.left" timestamp="1578278994292">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.1.left/0.0.1366.737@0.0.1366.737" timestamp="1578278994292" />
+    <state width="1322" height="177" key="GridCell.Tab.1.right" timestamp="1578278994293">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.1.right/0.0.1366.737@0.0.1366.737" timestamp="1578278994293" />
+    <state width="1322" height="177" key="GridCell.Tab.2.bottom" timestamp="1578278994293">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.2.bottom/0.0.1366.737@0.0.1366.737" timestamp="1578278994293" />
+    <state width="1322" height="177" key="GridCell.Tab.2.center" timestamp="1578278994293">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.2.center/0.0.1366.737@0.0.1366.737" timestamp="1578278994293" />
+    <state width="1322" height="177" key="GridCell.Tab.2.left" timestamp="1578278994293">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.2.left/0.0.1366.737@0.0.1366.737" timestamp="1578278994293" />
+    <state width="1322" height="177" key="GridCell.Tab.2.right" timestamp="1578278994293">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="177" key="GridCell.Tab.2.right/0.0.1366.737@0.0.1366.737" timestamp="1578278994293" />
+    <state width="1322" height="220" key="GridCell.Tab.3.bottom" timestamp="1578274454894">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="220" key="GridCell.Tab.3.bottom/0.0.1366.737@0.0.1366.737" timestamp="1578274454894" />
+    <state width="1322" height="220" key="GridCell.Tab.3.center" timestamp="1578274454894">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="220" key="GridCell.Tab.3.center/0.0.1366.737@0.0.1366.737" timestamp="1578274454894" />
+    <state width="1322" height="220" key="GridCell.Tab.3.left" timestamp="1578274454894">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="220" key="GridCell.Tab.3.left/0.0.1366.737@0.0.1366.737" timestamp="1578274454894" />
+    <state width="1322" height="220" key="GridCell.Tab.3.right" timestamp="1578274454894">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="1322" height="220" key="GridCell.Tab.3.right/0.0.1366.737@0.0.1366.737" timestamp="1578274454894" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1578278608893">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.0.1366.737@0.0.1366.737" timestamp="1578278608893" />
+    <state x="186" y="0" key="SettingsEditor" timestamp="1578274210002">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="186" y="0" key="SettingsEditor/0.0.1366.737@0.0.1366.737" timestamp="1578274210002" />
+    <state x="392" y="7" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1578278698064">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="392" y="7" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1366.737@0.0.1366.737" timestamp="1578278698064" />
+    <state x="375" y="195" key="com.intellij.ide.util.TipDialog" timestamp="1578272635701">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="375" y="195" key="com.intellij.ide.util.TipDialog/0.0.1366.737@0.0.1366.737" timestamp="1578272635701" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/OCmanager$OCmanager.ic" NAME="OCmanager Coverage Results" MODIFIED="1578274578284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
