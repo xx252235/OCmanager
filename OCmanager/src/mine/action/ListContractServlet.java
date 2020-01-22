@@ -48,6 +48,7 @@ public class ListContractServlet extends HttpServlet {
 					type = new String(type.getBytes("ISO-8859-1"),"UTF-8");
 				}
 				System.out.println(branchorg+"???"+objectname+"????"+contracttype+"???"+contractsum+"???"+signdate+"???"+type);
+				//页面返回时，默认查看全部
 				if("all".equals(type)) {
 					branchorg = null;
 					objectname = null;

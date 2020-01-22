@@ -23,13 +23,13 @@
 <form name="form1" action="" method="post">
 	
 	<!-- 隐藏域 -->
-	<input type="hidden" name="id" value="${ c.id }" />
+	<input type="hidden" name="content_id" value="${ c.content_id }" />
 
 	<table align="center" border="1" width="600" cellpadding="10">
 		<tr style="display:none">
 			<td style="display:none">合同id</td>
 			<td>
-				<input type="text" name="contract_id" value="${c.contract_id}" style="display:none" />
+				<input type="text" name="relativeid" value="${c.relativeid}" style="display:none" />
 			</td>
 		</tr>
 		<tr>

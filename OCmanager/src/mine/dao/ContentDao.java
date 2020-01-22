@@ -19,13 +19,13 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import com.mchange.v2.c3p0.impl.NewPooledConnection;
 public class ContentDao {
 	//找到所有用户的方法，返回一个List
-	public List<Content> findAll(String contractid){
+	public List<Content> findAll(String contract_id){
 		//DButils的方法，创建一个QueryRunner类，传入的参数是c3p0连接池对象
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
-			System.out.println("bbbbbbbbbbbb"+contractid);
+			System.out.println("bbbbbbbbbbbb"+contract_id);
 			//返回一个List
-			return runner.query("select * from contract_content where contract_id = ?", new BeanListHandler<Content>(Content.class),contractid);
+			return runner.query("select * from contract_content where relativeid = ?", new BeanListHandler<Content>(Content.class),contract_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("查询全部结果失败");
@@ -44,7 +44,7 @@ public class ContentDao {
 			// 先写出sql语句
 			String sql  = "insert into contract_content values (?,?,?,?,?,?,?,?)";
 			// contract对象已经传过来了，我们可以获取它的参数
-			Object [] params = {c.getId(),c.getContract_id(),c.getContract_con(),c.getStyle(),c.getUnit(),c.getPrice(),sinputdate,sinputdate};
+			Object [] params = {c.getContent_id(),c.getRelativeid(),c.getContract_con(),c.getStyle(),c.getUnit(),c.getPrice(),sinputdate,sinputdate};
 			// 将contract的内容作为参数的内容传到上面的？当中，位置是相对应的
 			runner.update(sql, params);
 			
@@ -54,10 +54,10 @@ public class ContentDao {
 		}
 	}
 	//通过ID来进行查找合同内容
-	public Content findById(String id) {
+	public Content findById(String content_id) {
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
-			return runner.query("select * from contract_content where id = ?", new BeanHandler<Content>(Content.class) ,id);
+			return runner.query("select * from contract_content where content_id = ?", new BeanHandler<Content>(Content.class) ,content_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("通过ID查询失败");
@@ -73,8 +73,8 @@ public class ContentDao {
         Date supdatedate = sdf.parse(Updatedate);
 
 		try {
-			String sql = "update contract_content set contract_con = ? , style = ? , unit = ? , price = ? , updatedate = ? where id = ?";
-			Object [] params = {c.getContract_con(),c.getStyle(),c.getUnit(),c.getPrice(),supdatedate,c.getId()};
+			String sql = "update contract_content set contract_con = ? , style = ? , unit = ? , price = ? , updatedate = ? where content_id = ?";
+			Object [] params = {c.getContract_con(),c.getStyle(),c.getUnit(),c.getPrice(),supdatedate,c.getContent_id()};
 			runner.update(sql, params);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -111,10 +111,10 @@ public class ContentDao {
 	}
 	
 	//删除用户的操作
-	public void deleteContent(String id) {
+	public void deleteContent(String content_id) {
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
-			runner.update("delete from contract_content where id = ?", id);
+			runner.update("delete from contract_content where content_id = ?", content_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("删除失败");

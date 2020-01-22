@@ -10,7 +10,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 public class UUIDUtil {
 	public static String getUUID(String tablename){
-		String sDate,sNum,sUUID = null;
+		String sDate,sNum,sUUID = null ,sTableID= "id";
 		int sDatelen = 0,sMaxlen = 0,i = 0,m = 0;
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
@@ -18,7 +18,12 @@ public class UUIDUtil {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 				sDate = sdf.format(date);
 				sDatelen = sDate.length();
-				String sMaxSerialno =  (String)runner.query("select ifnull(max(id),'') from "+tablename+" where id like '"+ sDate+"%'", new ScalarHandler());
+				if(tablename.equals("contract_info")) {
+					sTableID = "contract_id";
+				}else if(tablename.equals("contract_contract")) {
+					sTableID = "content_id";
+				}
+				String sMaxSerialno =  (String)runner.query("select ifnull(max("+sTableID+"),'') from "+tablename+" where id like '"+ sDate+"%'", new ScalarHandler());
 				sMaxlen = sMaxSerialno.length();
 				if(sMaxSerialno.equals("")){
 					System.out.println(sMaxSerialno);

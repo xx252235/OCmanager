@@ -86,6 +86,10 @@ System.out.println(contractsum+"ssssssssssss");
 			<th>招投标情况</th>
 			<th>是否超预控</th>
 			<th>超预控金额（万元）</th>
+			<th>合同内容</th>
+			<th>规格型号</th>
+			<th>单位</th>
+			<th>单价</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -106,14 +110,14 @@ System.out.println(contractsum+"ssssssssssss");
 			<td>${ c.bidstate }</td>
 			<td>${ c.isover }</td>
 			<td>${ c.oversum }</td>
+			<td>${ c.contract_con }</td>
+			<td>${ c.style }</td>
+			<td>${ c.unit }</td>
+			<td>${ c.price }</td>
 			<td>
-				<a href="${ pageContext.request.contextPath }/initupdate?id=${ c.id }">编辑</a>
+				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?relativeid=${c.contract_id}&objectname=${c.objectname}">查看</a>
 				|
-				<a href="${ pageContext.request.contextPath }/readonly?id=${ c.id }">查看</a>
-				|
-				<a href="${ pageContext.request.contextPath }/deletecontract?id=${c.id}" onclick="return confirm('确定删除吗？')" >删除</a>
-				|
-				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?id=${c.id}&objectname=${c.objectname}" >内容</a>
+				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?relativeid=${c.contract_id}&objectname=${c.objectname}" >内容</a>
 			</td>
 		</tr>
 		

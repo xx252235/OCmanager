@@ -36,11 +36,11 @@ public class AddContractAndContentServlet extends HttpServlet {
 			System.out.println(JSON.toJSONString(map));
 			c.setRemark(remark.replace("[", "").replace("]", ""));
 			cs.addContract(c);
-			String contractid = c.getId();
-			System.out.println(contractid+"lllllllllllllllllllll");
+			String contract_id = c.getContract_id();
+			System.out.println(contract_id+"lllllllllllllllllllll");
 			response.setContentType("text/html;charset=UTF-8");
 			response.getWriter().print("<h3>?????</h3>");
-			response.sendRedirect(request.getContextPath()+"/pages/addcontent.jsp?id="+contractid);
+			response.sendRedirect(request.getContextPath()+"/pages/addcontent.jsp?contract_id="+contract_id);
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {

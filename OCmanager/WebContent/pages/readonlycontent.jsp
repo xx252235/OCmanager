@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <% 
 	String contract_id = request.getParameter("contract_id");
-	String id = request.getParameter("id");
+	String content_id = request.getParameter("content_id");
 	System.out.println(id+"(((((((((((((())))))))))))))");
 
 %>
@@ -22,13 +22,13 @@
 <form action="${ pageContext.request.contextPath }/listContent" method="post">
 	
 	<!-- 隐藏域 -->
-	<input type="hidden" name="id" value="${ c.id }" />
+	<input type="hidden" name="content_id" value="${ c.content_id }" />
 
 	<table align="center" border="1" width="600" cellpadding="10">
 		<tr>
 			<td>合同id</td>
 			<td>
-				<input type="text" name="contract_id" value="${c.contract_id}" readonly="readonly" />
+				<input type="text" name="relativeid" value="${c.relativeid}" readonly="readonly" />
 			</td>
 		</tr>
 		<tr>

@@ -33,7 +33,6 @@ public class UpdateContentServlet extends HttpServlet {
 		Content c = new Content();
 		try {
 			BeanUtils.populate(c, map);
-			String Contractid = request.getParameter("contractid");
 			ContentService cs = new ContentService();
 			//System.out.println(Contractid+"????????????"+JSON.toJSONString(map));
 
@@ -47,7 +46,7 @@ public class UpdateContentServlet extends HttpServlet {
 				// TODO 自动生成的 catch 块
 				e.printStackTrace();
 			}
-			String [] Contract_ids = map.get("contract_id");
+			String [] Contract_ids = map.get("relativeid");
 			String Contract_id = Arrays.toString(Contract_ids).replace("[", "").replace("]", "");
 			response.sendRedirect(request.getContextPath()+"/listContent?contract_id="+Contract_id);
 			

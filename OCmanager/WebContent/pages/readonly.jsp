@@ -16,7 +16,7 @@
 <form action="${ pageContext.request.contextPath }/listContract" method="post">
 	
 	<!-- 隐藏域 -->
-	<input type="hidden" name="id" value="${ c.id }" />
+	<input type="hidden" name="contract_id" value="${ c.contract_id }" />
 	<input type="hidden" name="type" value="all" />
 
 	<table align="center" border="1" width="600" cellpadding="10">

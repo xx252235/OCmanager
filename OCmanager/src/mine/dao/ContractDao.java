@@ -6,14 +6,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import mine.utils.MyJdbcUtil;
-import mine.vo.Contract;
-import mine.vo.PageBean;
-
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+
+import com.alibaba.fastjson.JSON;
+
+import mine.utils.MyJdbcUtil;
+import mine.vo.Contract;
+import mine.vo.ContractContent;
+import mine.vo.PageBean;
 public class ContractDao {
 	//找到所有用户的方法，返回一个List
 	public List<Contract> findAll(){
@@ -67,7 +70,7 @@ public class ContractDao {
 			// 先写出sql语句
 			String sql  = "insert into contract_info values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			// contract对象已经传过来了，我们可以获取它的参数
-			Object [] params = {c.getId(),c.getBranchorg(),c.getObjectname(),c.getContracttype(),c.getOtherside(),c.getIspartition(),
+			Object [] params = {c.getContract_id(),c.getBranchorg(),c.getObjectname(),c.getContracttype(),c.getOtherside(),c.getIspartition(),
 					c.getContractsum(),SignDate,Workdatefrom,c.getWorkdateto(),Approvedate,
 					c.getIssave(),c.getBidstate(),c.getIsover(),c.getOversum(),c.getRemark()};
 			// 将contract的内容作为参数的内容传到上面的？当中，位置是相对应的
@@ -79,10 +82,10 @@ public class ContractDao {
 		}
 	}
 	//通过ID来进行查找合同
-	public Contract findById(String id) {
+	public Contract findById(String contract_id) {
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
-			return runner.query("select * from contract_info where id = ?", new BeanHandler<Contract>(Contract.class) ,id);
+			return runner.query("select * from contract_info where contract_id = ?", new BeanHandler<Contract>(Contract.class) ,contract_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("通过ID查询失败");
@@ -93,10 +96,11 @@ public class ContractDao {
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
 	        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			String sql = "update contract_info set Objectname = ? , Contracttype = ? , Otherside = ? , Ispartition=? ,Contractsum = ?, Signdate = ?, Workdatefrom=?, Workdateto=?, Approvedate=?, Issave=?, Bidstate=?, Isover=?, Oversum=?, Remark=? where id = ?";
+			String sql = "update contract_info set Objectname = ? , Contracttype = ? , Otherside = ? , Ispartition=? ,Contractsum = ?, Signdate = ?, Workdatefrom=?, Workdateto=?, Approvedate=?, Issave=?, Bidstate=?, Isover=?, Oversum=?, Remark=? where contract_id = ?";
 			Object [] params = {c.getObjectname(),c.getContracttype(),c.getOtherside(),c.getIspartition(),
 					c.getContractsum(),sdf.parse(c.getSigndate()),sdf.parse(c.getWorkdatefrom()),c.getWorkdateto(),sdf.parse(c.getApprovedate()),
-					c.getIssave(),c.getBidstate(),c.getIsover(),c.getOversum(),c.getRemark(),c.getId()};
+					c.getIssave(),c.getBidstate(),c.getIsover(),c.getOversum(),c.getRemark(),c.getContract_id()};
+			System.out.println(JSON.toJSON(params).toString());
 			runner.update(sql, params);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -133,10 +137,10 @@ public class ContractDao {
 	}
 	
 	//删除用户的操作
-	public void deleteContract(String id) {
+	public void deleteContract(String contract_id) {
 		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
 		try {
-			runner.update("delete from contract_info where id = ?", id);
+			runner.update("delete from contract_info where contract_id = ?", contract_id);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("删除失败");
@@ -210,6 +214,52 @@ public class ContractDao {
 			params.add((pageCode - 1)*pageSize);
 			params.add(pageSize);
 			List<Contract> beanList = runner.query(selSql, new BeanListHandler<Contract>(Contract.class), params.toArray());
+			page.setBeanList(beanList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("分页条件查找失败");
+		}
+		return page;
+	}
+	public PageBean<ContractContent> findAllByConditionPage1(String branchorg,String objectname,String contracttype,String contractsum,String signdate,String contract_con,String style,String unit,String price, int pageCode, int pageSize) {
+		PageBean<ContractContent> page = new PageBean<ContractContent>();
+		page.setPageCode(pageCode);
+		page.setPageSize(pageSize);
+		StringBuffer whereSb = new StringBuffer(" where 1 = 1 ");
+		List<Object> params = new ArrayList<Object>();
+		if(branchorg != null && !branchorg.trim().isEmpty()){
+			whereSb.append(" and ci.branchorg = ?");
+			params.add(branchorg);
+		}
+		if(objectname != null && !objectname.trim().isEmpty()){
+			whereSb.append(" and ci.objectname like ?");
+			params.add("%"+objectname+"%");
+		}
+		if(contracttype != null && !contracttype.trim().isEmpty()){
+			whereSb.append(" and ci.contracttype = ?");
+			params.add(contracttype);
+		}
+		if(contractsum != null && !contractsum.trim().isEmpty()){
+			whereSb.append(" and ci.contractsum = ?");
+			params.add(contractsum);
+		}
+		if(signdate != null && !signdate.trim().isEmpty()){
+			whereSb.append(" and ci.signdate = ?");
+			params.add(signdate);
+		}
+		QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
+		try {
+			
+			StringBuffer countSb = new StringBuffer("select count(*) from contract_info ci LEFT JOIN contract_content cc ON ci.contract_id = cc.relativeid");
+			String countSql = countSb.append(whereSb).toString();
+			long count = (Long) runner.query(countSql, new ScalarHandler(),params.toArray());
+			page.setTotalCount((int)count);
+			StringBuffer selSb = new StringBuffer("select * from contract_info ci LEFT JOIN contract_content cc ON ci.contract_id = cc.relativeid ");
+			StringBuffer limitSb = new StringBuffer(" limit ? , ?");
+			String selSql = selSb.append(whereSb).append(limitSb).toString();
+			params.add((pageCode - 1)*pageSize);
+			params.add(pageSize);
+			List<ContractContent> beanList = runner.query(selSql, new BeanListHandler<ContractContent>(ContractContent.class), params.toArray());
 			page.setBeanList(beanList);
 		} catch (SQLException e) {
 			e.printStackTrace();

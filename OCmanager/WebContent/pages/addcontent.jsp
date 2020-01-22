@@ -3,11 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 String objectName = request.getParameter("objectname");
-String id = request.getParameter("id");
+String contract_id = request.getParameter("relativeid");
+System.out.println("ttttttttttttttt"+contract_id+"yyyyyy"+objectName);
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
   <head>
     <base href="<%=basePath%>">
     
@@ -21,8 +23,8 @@ String id = request.getParameter("id");
   <!-- 访问项目的时候会自动访问这个index文件 -->
   <frameset cols="420,*">
   <!-- 将页面分为两个部分，一部分是top.jsp一部分是main.jsp -->
-  	<frame src="${ pageContext.request.contextPath }/contractoutline?id=<%=id %>" name="left"/>
-  	<frame src="${ pageContext.request.contextPath }/listContent?contract_id=<%=id %>" name="right"/>
+  	<frame src="${ pageContext.request.contextPath }/contractoutline?contract_id=<%=contract_id %>" name="left"/>
+  	<frame src="${ pageContext.request.contextPath }/listContent?contract_id=<%=contract_id %>" name="right"/>
   </frameset>
   
   <body>

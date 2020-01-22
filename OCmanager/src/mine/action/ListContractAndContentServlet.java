@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import mine.service.ContractService;
 import mine.vo.Contract;
+import mine.vo.ContractContent;
 import mine.vo.PageBean;
 
 @WebServlet("/listContractAndContent")
@@ -47,6 +48,22 @@ public class ListContractAndContentServlet extends HttpServlet {
 				if(type != null && !type.trim().isEmpty()){
 					type = new String(type.getBytes("ISO-8859-1"),"UTF-8");
 				}
+				String contract_con = request.getParameter("contract_con");
+				if(contract_con != null && !contract_con.trim().isEmpty()){
+					contract_con = new String(contract_con.getBytes("ISO-8859-1"),"UTF-8");
+				}
+				String style = request.getParameter("style");
+				if(style != null && !style.trim().isEmpty()){
+					style = new String(style.getBytes("ISO-8859-1"),"UTF-8");
+				}
+				String unit = request.getParameter("unit");
+				if(unit != null && !unit.trim().isEmpty()){
+					unit = new String(unit.getBytes("ISO-8859-1"),"UTF-8");
+				}
+				String price = request.getParameter("price");
+				if(price != null && !price.trim().isEmpty()){
+					price = new String(price.getBytes("ISO-8859-1"),"UTF-8");
+				}
 				System.out.println(branchorg+"???"+objectname+"????"+contracttype+"???"+contractsum+"???"+signdate+"???"+type);
 				if("all".equals(type)) {
 					branchorg = null;
@@ -54,12 +71,16 @@ public class ListContractAndContentServlet extends HttpServlet {
 					contracttype = null;
 					contractsum = null;
 					signdate = null;
+					contract_con = null;
+					style = null;
+					unit = null;
+					price = null;
 					System.out.println("111111111");
 				}
 				String path = getPath(request);
 				int pageCode = getPageCode(request);
 				int pageSize = 10;
-				PageBean<Contract> page = cs.findAllByConditionPage(branchorg,objectname, contracttype,contractsum,signdate,pageCode, pageSize);
+				PageBean<ContractContent> page = cs.findAllByConditionPage1(branchorg,objectname, contracttype,contractsum,signdate,contract_con,style,unit,price,pageCode, pageSize);
 
 				page.setUrl(path);
 				

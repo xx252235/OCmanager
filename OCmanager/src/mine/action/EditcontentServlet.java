@@ -22,12 +22,12 @@ public class EditcontentServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
+		String content_id = request.getParameter("content_id");
 		ContentService cs = new ContentService();
-		Content c = cs.findById(id);
+		Content c = cs.findById(content_id);
 		request.setAttribute("c", c);
-		request.setAttribute("contractid", c.getContract_id());
-		System.out.println(c.getContract_id()+"|||"+c.getContract_con());
+		request.setAttribute("contractid", c.getRelativeid());
+		System.out.println(c.getRelativeid()+"|||"+c.getContract_con());
 		//×ª·¢
 		request.getRequestDispatcher("/pages/updatecontent.jsp").forward(request, response);
 	}

@@ -34,25 +34,25 @@ public class ContentService {
 	//加一个合同
 	public void addContent(Content c){
 		//为合同获取一个唯一的ID
-		String id = UUIDUtil.getUUID("contract_content");
-		c.setId(id);
+		String content_id = UUIDUtil.getUUID("contract_content");
+		c.setContent_id(content_id);
 		ContentDao dao = new ContentDao();
 		dao.save(c);
 	}
 	//找到所有的合同，不用分页的功能
-	public List<Content> findAll(String contractid){
+	public List<Content> findAll(String contract_id){
 		ContentDao dao = new ContentDao();
-		return dao.findAll(contractid);
+		return dao.findAll(contract_id);
 	}
 	//通过ID找到相应的合同
-	public Content findById(String id){
+	public Content findById(String content_id){
 		ContentDao dao = new ContentDao();
-		return dao.findById(id);
+		return dao.findById(content_id);
 	}
 	//删除一个合同数据
-	public void deleteContent(String id) {
+	public void deleteContent(String content_id) {
 		ContentDao dao = new ContentDao();
-		dao.deleteContent(id);
+		dao.deleteContent(content_id);
 	}
 
 }

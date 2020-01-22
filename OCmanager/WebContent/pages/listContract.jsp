@@ -107,13 +107,13 @@ System.out.println(contractsum+"ssssssssssss");
 			<td>${ c.isover }</td>
 			<td>${ c.oversum }</td>
 			<td>
-				<a href="${ pageContext.request.contextPath }/initupdate?id=${ c.id }">编辑</a>
+				<a href="${ pageContext.request.contextPath }/initupdate?contract_id=${ c.contract_id }">编辑</a>
 				|
-				<a href="${ pageContext.request.contextPath }/readonly?id=${ c.id }">查看</a>
+				<a href="${ pageContext.request.contextPath }/readonly?contract_id=${ c.contract_id }">查看</a>
 				|
-				<a href="${ pageContext.request.contextPath }/deletecontract?id=${c.id}" onclick="return confirm('确定删除吗？')" >删除</a>
+				<a href="${ pageContext.request.contextPath }/deletecontract?contract_id=${c.contract_id}" onclick="return confirm('确定删除吗？')" >删除</a>
 				|
-				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?id=${c.id}&objectname=${c.objectname}" >内容</a>
+				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?contract_id=${c.contract_id}&objectname=${c.objectname}" >内容</a>
 			</td>
 		</tr>
 		

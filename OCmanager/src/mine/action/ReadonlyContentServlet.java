@@ -20,12 +20,12 @@ public class ReadonlyContentServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
+		String content_id = request.getParameter("content_id");
 		ContentService cs = new ContentService();
 		
-		Content c = cs.findById(id);
+		Content c = cs.findById(content_id);
 		request.setAttribute("c", c);
-		System.out.println("bbbbbbbbb"+id);
+		System.out.println("bbbbbbbbb"+content_id);
 		//×ª·¢
 		request.getRequestDispatcher("/pages/readonlycontent.jsp").forward(request, response);
 	}

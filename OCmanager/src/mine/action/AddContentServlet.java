@@ -33,10 +33,10 @@ public class AddContentServlet extends HttpServlet {
 		try {
 			BeanUtils.populate(c, map);
 			ContentService cs = new ContentService();
-			String [] contract_ids = map.get("contract_id");
+			String [] contract_ids = map.get("relativeid");
 			String contract_id = Arrays.toString(contract_ids);
 			contract_id = contract_id.replace("[", "").replace("]", "");
-			//System.out.println("aa"+contract_id+"aa");
+			System.out.println("aa"+contract_id+"aa");
 			cs.addContent(c);
 			response.setContentType("text/html;charset=UTF-8");
 			response.getWriter().print("<h3>?????</h3>");

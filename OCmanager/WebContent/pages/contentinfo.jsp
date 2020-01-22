@@ -41,7 +41,7 @@ String contract_id = request.getParameter("contract_id");
 		<tr>
 			<td style="display:none" >合同id</td>
 			<td style="display:none">
-				<input type="text" style="display:none" name="contract_id" value=<%=contract_id %> />
+				<input type="text" style="display:none" name="relativeid" value=<%=contract_id %> />
 			</td>
 		</tr>
 		<tr>

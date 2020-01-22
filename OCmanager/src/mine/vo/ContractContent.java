@@ -1,7 +1,7 @@
 package mine.vo;
 
 
-public class Contract {
+public class ContractContent {
 	//正好是数据库里面创建的8个对象，并在这里设置他们的get和set方法，等待着被封装
 	private String contract_id;
 	private String branchorg;
@@ -19,8 +19,18 @@ public class Contract {
 	private String isover;
 	private Double oversum;
 	private String remark;
+	//合同内容
+	private String content_id;
+	private String relativeid;
+	private String contract_con;
+	private String style;
+	private String unit;
+	private Double price;
 	
 	
+	
+
+
 	/**
 	 * @return the contract_id
 	 */
@@ -34,6 +44,38 @@ public class Contract {
 	 */
 	public void setContract_id(String contract_id) {
 		this.contract_id = contract_id;
+	}
+
+
+	/**
+	 * @return the content_id
+	 */
+	public String getContent_id() {
+		return content_id;
+	}
+
+
+	/**
+	 * @param content_id the content_id to set
+	 */
+	public void setContent_id(String content_id) {
+		this.content_id = content_id;
+	}
+
+
+	/**
+	 * @return the relativeid
+	 */
+	public String getRelativeid() {
+		return relativeid;
+	}
+
+
+	/**
+	 * @param relativeid the relativeid to set
+	 */
+	public void setRelativeid(String relativeid) {
+		this.relativeid = relativeid;
 	}
 
 
@@ -277,23 +319,90 @@ public class Contract {
 	}
 
 
+	/**
+	 * @return the contract_con
+	 */
+	public String getContract_con() {
+		return contract_con;
+	}
+
+
+	/**
+	 * @param contract_con the contract_con to set
+	 */
+	public void setContract_con(String contract_con) {
+		this.contract_con = contract_con;
+	}
+
+
+	/**
+	 * @return the style
+	 */
+	public String getStyle() {
+		return style;
+	}
+
+
+	/**
+	 * @param style the style to set
+	 */
+	public void setStyle(String style) {
+		this.style = style;
+	}
+
+
+	/**
+	 * @return the unit
+	 */
+	public String getUnit() {
+		return unit;
+	}
+
+
+	/**
+	 * @param unit the unit to set
+	 */
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+
+	/**
+	 * @return the price
+	 */
+	public Double getPrice() {
+		return price;
+	}
+
+
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Contract [contract_id=" + contract_id + ", branchorg="
+		return "ContractContent [contract_id=" + contract_id + ", branchorg="
 				+ branchorg + ", objectname=" + objectname + ", contracttype="
 				+ contracttype + ", otherside=" + otherside + ", ispartition="
 				+ ispartition + ", contractsum=" + contractsum + ", signdate="
 				+ signdate + ", workdatefrom=" + workdatefrom + ", workdateto="
 				+ workdateto + ", approvedate=" + approvedate + ", issave="
 				+ issave + ", bidstate=" + bidstate + ", isover=" + isover
-				+ ", oversum=" + oversum + ", remark=" + remark + "]";
+				+ ", oversum=" + oversum + ", remark=" + remark
+				+ ", content_id=" + content_id + ", relativeid=" + relativeid
+				+ ", contract_con=" + contract_con + ", style=" + style
+				+ ", unit=" + unit + ", price=" + price + "]";
 	}
 
 
-	
+
 	
 }
 

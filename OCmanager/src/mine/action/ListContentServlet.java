@@ -21,10 +21,10 @@ public class ListContentServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String Contractid = request.getParameter("contract_id");
+		String contract_id  = request.getParameter("contract_id");
 		ContentService cs = new ContentService();
-		List<Content> cList = cs.findAll(Contractid);
-		//System.out.println("2222222222"+Contractid);
+		List<Content> cList = cs.findAll(contract_id);
+		System.out.println("2222222222"+contract_id);
 		request.setAttribute("cList", cList);
 		request.getRequestDispatcher("/pages/listContent.jsp").forward(request, response);
 	}

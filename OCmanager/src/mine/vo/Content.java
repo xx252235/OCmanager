@@ -4,38 +4,40 @@ import java.util.Date;
 
 
 public class Content {
+	
 	//正好是数据库里面创建的8个对象，并在这里设置他们的get和set方法，等待着被封装
-	private String id;
-	private String contract_id;
+	private String content_id;
+	private String relativeid;
 	private String contract_con;
 	private String style;
 	private String unit;
 	private String price;
 	private String inputdate;
 	private String updatedate;
+
 	/**
-	 * @return the id
+	 * @return the content_id
 	 */
-	public String getId() {
-		return id;
+	public String getContent_id() {
+		return content_id;
 	}
 	/**
-	 * @param id the id to set
+	 * @param content_id the content_id to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setContent_id(String content_id) {
+		this.content_id = content_id;
 	}
 	/**
-	 * @return the contract_id
+	 * @return the relativeid
 	 */
-	public String getContract_id() {
-		return contract_id;
+	public String getRelativeid() {
+		return relativeid;
 	}
 	/**
-	 * @param contract_id the contract_id to set
+	 * @param relativeid the relativeid to set
 	 */
-	public void setContract_id(String contract_id) {
-		this.contract_id = contract_id;
+	public void setRelativeid(String relativeid) {
+		this.relativeid = relativeid;
 	}
 	/**
 	 * @return the contract_con
@@ -114,9 +116,9 @@ public class Content {
 	 */
 	@Override
 	public String toString() {
-		return "Content [id=" + id + ", contract_id=" + contract_id
-				+ ", contract_con=" + contract_con + ", style=" + style
-				+ ", unit=" + unit + ", price=" + price + ", inputdate="
+		return "Content [content_id=" + content_id + ", relativeid="
+				+ relativeid + ", contract_con=" + contract_con + ", style="
+				+ style + ", unit=" + unit + ", price=" + price + ", inputdate="
 				+ inputdate + ", updatedate=" + updatedate + "]";
 	}
 

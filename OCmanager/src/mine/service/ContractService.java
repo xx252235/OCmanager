@@ -6,6 +6,7 @@ import java.util.List;
 import mine.dao.ContractDao;
 import mine.utils.UUIDUtil;
 import mine.vo.Contract;
+import mine.vo.ContractContent;
 import mine.vo.PageBean;
 //这里面的方法，都在servlet中得到调用，然后，他也会调用dao中的方法
 public class ContractService {
@@ -33,8 +34,8 @@ public class ContractService {
 	//加一个合同
 	public void addContract(Contract c){
 		//为合同获取一个唯一的ID
-		String id = UUIDUtil.getUUID("contract_info");
-		c.setId(id);
+		String contract_id = UUIDUtil.getUUID("contract_info");
+		c.setContract_id(contract_id);
 		ContractDao dao = new ContractDao();
 		dao.save(c);
 	}
@@ -44,14 +45,41 @@ public class ContractService {
 		return dao.findAll();
 	}
 	//通过ID找到相应的合同
-	public Contract findById(String id){
+	public Contract findById(String contract_id){
 		ContractDao dao = new ContractDao();
-		return dao.findById(id);
+		return dao.findById(contract_id);
 	}
 	//删除一个合同数据
-	public void deleteContract(String id) {
+	public void deleteContract(String contract_id) {
 		ContractDao dao = new ContractDao();
-		dao.deleteContract(id);
+		dao.deleteContract(contract_id);
+	}
+	/**  
+	 * @Title: findAllByConditionPage1
+	 * @Description: TODO
+	 * @author: xu01.xin
+	 * @param branchorg
+	 * @param objectname
+	 * @param contracttype
+	 * @param contractsum
+	 * @param signdate
+	 * @param contract_con
+	 * @param style
+	 * @param unit
+	 * @param price
+	 * @param pageCode
+	 * @param pageSize
+	 * @return
+	 * @date 2020年1月21日 下午4:56:10
+	 */
+	public PageBean<ContractContent> findAllByConditionPage1(String branchorg,
+			String objectname, String contracttype, String contractsum,
+			String signdate, String contract_con, String style, String unit,
+			String price, int pageCode, int pageSize) {
+		// TODO Auto-generated method stub
+		ContractDao dao = new ContractDao();
+		System.out.println(branchorg+">>>>>>>>>>>"+objectname);
+		return dao.findAllByConditionPage1(branchorg,objectname,contracttype,contractsum,signdate,contract_con,style,unit,price,pageCode,pageSize);
 	}
 
 }

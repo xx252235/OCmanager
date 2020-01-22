@@ -19,9 +19,9 @@ public class ContractOutlineServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
+		String contract_id = request.getParameter("contract_id");
 		ContractService cs = new ContractService();
-		Contract c = cs.findById(id);
+		Contract c = cs.findById(contract_id);
 		request.setAttribute("c", c);
 		//×ª·¢
 		request.getRequestDispatcher("/pages/contractoutline.jsp").forward(request, response);

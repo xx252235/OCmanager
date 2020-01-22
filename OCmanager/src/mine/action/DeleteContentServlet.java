@@ -21,11 +21,11 @@ public class DeleteContentServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//由于是删除的操作，所以只需要获取它的ID就可以把它删除
-		String id = request.getParameter("id");
+		String content_id = request.getParameter("content_id");
 		String contract_id = request.getParameter("contract_id");
 		//System.out.println(contract_id+"?????????");
 		ContentService cs = new ContentService();
-		cs.deleteContent(id);
+		cs.deleteContent(content_id);
 		//重定向
 		response.sendRedirect(request.getContextPath()+"/listContent?contract_id="+contract_id);
 	}

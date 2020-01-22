@@ -19,9 +19,9 @@ public class DeleteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//由于是删除的操作，所以只需要获取它的ID就可以把它删除
-		String id = request.getParameter("id");
+		String contract_id = request.getParameter("contract_id");
 		ContractService cs = new ContractService();
-		cs.deleteContract(id);
+		cs.deleteContract(contract_id);
 		//重定向
 		response.sendRedirect(request.getContextPath()+"/listContract");
 	}

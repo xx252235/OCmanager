@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-String contractid = request.getParameter("contract_id");
+String contract_id = request.getParameter("contract_id");
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,7 +39,7 @@ String contractid = request.getParameter("contract_id");
 			</td>
 			<td>
 				<input type="Button" name="Find" value="查询" onClick="find()" />
-				<input type="Button" name="Create" value="新增合同内容" onClick="create(<%=contractid %>)"/>
+				<input type="Button" name="Create" value="新增合同内容" onClick="create(<%=contract_id %>)"/>
 			</td>
 		</tr>
 	</table>
@@ -71,7 +71,7 @@ String contractid = request.getParameter("contract_id");
 		<c:forEach var="c" items="${ requestScope.cList }" varStatus="status">
 			<tr align="center">
 				<td>${ status.count }</td>
-				<td style="display:none">${ c.id }</td>
+				<td style="display:none">${ c.content_id }</td>
 				<td>${ c.contract_con }</td>
 				<td>${ c.style }</td>
 				<td>${ c.unit }</td>
@@ -79,11 +79,11 @@ String contractid = request.getParameter("contract_id");
 				<td style="display:none">${ c.inputdate }</td>
 				<td style="display:none">${ c.updatedate }</td>
 				<td>
-					<a href="${ pageContext.request.contextPath }/editcontent?id=${ c.id }">编辑</a>
+					<a href="${ pageContext.request.contextPath }/editcontent?content_id=${ c.content_id }">编辑</a>
 					|
-					<a href="${ pageContext.request.contextPath }/readonlycontent?id=${ c.id }">查看</a>
+					<a href="${ pageContext.request.contextPath }/readonlycontent?content_id=${ c.content_id }">查看</a>
 					|
-					<a href="${ pageContext.request.contextPath }/deletecontent?id=${c.id}&contract_id=<%=contractid %>" onclick="return confirm('确定删除吗？')" >删除</a>
+					<a href="${ pageContext.request.contextPath }/deletecontent?content_id=${c.content_id}&contract_id=<%=contract_id %>" onclick="return confirm('确定删除吗？')" >删除</a>
 				</td>
 			</tr>
 		</c:forEach>
@@ -97,7 +97,7 @@ String contractid = request.getParameter("contract_id");
 
     function create(contractid){
     	//alert(contractid);
-	    document.form1.action="${ pageContext.request.contextPath }/pages/contentinfo.jsp?contract_id="+contractid+"";
+	    document.form1.action="${ pageContext.request.contextPath }/pages/contentinfo.jsp?contract_id="+contract_id+"";
 	    document.form1.submit();
     }
 </Script>
