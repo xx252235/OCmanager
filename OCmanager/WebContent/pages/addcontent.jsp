@@ -3,7 +3,10 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 String objectName = request.getParameter("objectname");
-String contract_id = request.getParameter("relativeid");
+String contract_id = request.getParameter("contract_id");
+String readonly = "false";
+readonly = request.getParameter("readonly");
+
 System.out.println("ttttttttttttttt"+contract_id+"yyyyyy"+objectName);
 %>
 
@@ -24,7 +27,7 @@ System.out.println("ttttttttttttttt"+contract_id+"yyyyyy"+objectName);
   <frameset cols="420,*">
   <!-- 将页面分为两个部分，一部分是top.jsp一部分是main.jsp -->
   	<frame src="${ pageContext.request.contextPath }/contractoutline?contract_id=<%=contract_id %>" name="left"/>
-  	<frame src="${ pageContext.request.contextPath }/listContent?contract_id=<%=contract_id %>" name="right"/>
+  	<frame src="${ pageContext.request.contextPath }/listContent?relativeid=<%=contract_id %>&readonly=<%=readonly %>" name="right"/>
   </frameset>
   
   <body>

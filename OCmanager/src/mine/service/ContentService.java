@@ -54,7 +54,11 @@ public class ContentService {
 		ContentDao dao = new ContentDao();
 		dao.deleteContent(content_id);
 	}
-
+	//通过ID找到相应的合同
+	public List<Content> findByCon(String contract_con,String contract_id){
+			ContentDao dao = new ContentDao();
+			return dao.findByCon(contract_con,contract_id);
+		}
 }
 
 

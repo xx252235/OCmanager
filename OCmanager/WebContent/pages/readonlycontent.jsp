@@ -3,7 +3,7 @@
 <% 
 	String contract_id = request.getParameter("contract_id");
 	String content_id = request.getParameter("content_id");
-	System.out.println(id+"(((((((((((((())))))))))))))");
+	System.out.println(content_id+"(((((((((((((())))))))))))))");
 
 %>
 

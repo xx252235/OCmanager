@@ -16,6 +16,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
+import com.alibaba.fastjson.JSONArray;
 import com.mchange.v2.c3p0.impl.NewPooledConnection;
 public class ContentDao {
 	//找到所有用户的方法，返回一个List
@@ -180,5 +181,29 @@ public class ContentDao {
 		}
 		return page;
 	}
-
+	//不分页的条件查找
+		public List<Content> findByCon(String contract_con,String contract_id) {
+			QueryRunner runner = new QueryRunner(MyJdbcUtil.getDataSource());
+			try {
+				// 创建一个StringBuffer对象进行字符串的拼接
+				StringBuffer sb = new StringBuffer("select * from contract_content where 1=1 ");
+				//这个List用来存参数，在下面赋值给？
+				List<Object> list = new ArrayList<Object>();
+				// 如果查询条件objectname不为空或者去掉空格后仍然不为空，则将查询objectname的语句拼接到后面
+				if(contract_con != null && !contract_con.trim().isEmpty()){
+					sb.append(" and contract_con = ? ");
+					list.add(contract_con);
+				}
+				if(contract_id != null && !contract_id.trim().isEmpty()){
+					sb.append(" and relativeid = ? ");
+					list.add(contract_id);
+				}
+				System.out.println(sb.toString()+"...."+JSONArray.toJSONString(list));
+				
+				return runner.query(sb.toString(), new BeanListHandler<Content>(Content.class),list.toArray());
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new RuntimeException("条件查找失败");
+			}
+		}
 }

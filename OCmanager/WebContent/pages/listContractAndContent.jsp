@@ -61,7 +61,6 @@ System.out.println(contractsum+"ssssssssssss");
 			</td>
 			<td align="right">
 				<input type="Button" name="Find" value="查询" onClick="find()" />
-				<input type="Button" name="Create" value="新增合同" onClick="create()"/>
 				<input type="Button" name="ExportExcel" value="导出" onClick="exportExcel()"/>
 			</td>
 		</tr>
@@ -115,9 +114,7 @@ System.out.println(contractsum+"ssssssssssss");
 			<td>${ c.unit }</td>
 			<td>${ c.price }</td>
 			<td>
-				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?relativeid=${c.contract_id}&objectname=${c.objectname}">查看</a>
-				|
-				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?relativeid=${c.contract_id}&objectname=${c.objectname}" >内容</a>
+				<a href="${ pageContext.request.contextPath }/pages/addcontent.jsp?contract_id=${c.contract_id}&objectname=${c.objectname}&readonly=true">详情</a>
 			</td>
 		</tr>
 		
